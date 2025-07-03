@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking System</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button {
+    background-color: #ff4757;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    background-color: #ff6b81;
+    transform: translateY(-3px);
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.button span {
+    position: relative;
+    z-index: 1;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.8em;
+    color: #ccc;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 SJ Airline Reservation</h1>
+            <p>Indulge in Elegance, Explore in Style.</p>
+        </header>
+        <div class="button-container">
+            <a href="http://localhost:8080/flights" class="button">View Available Flights</a>
+            <a href="form.html" class="button">Book a Seat</a>
+            <a href="http://localhost:8080/display" class="button">View Flight Data</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Email : sjairlinereservation@gmail.com<br>Contact :555-383-5555<br></p>
+    </footer>
+</body>
+</html>

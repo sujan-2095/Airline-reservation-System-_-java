@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #1c1c1c, #3a3a3a);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        
+        header {
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .button {
+            background-color: #ff4757;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container {
+
+            background: #ff4757;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #e8dada;
+        }
+        select, input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #874444;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+        input[type="submit"] {
+            background-color: #2b0404a7;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0c0103;
+            transform: translateY(-3px);
+        }
+        input[type="submit"]::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.5s ease;
+            z-index: 0;
+            transform: translate(-50%, -50%) scale(0);
+        }
+        
+        input[type="submit"]:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        input[type="submit"]ton span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8em;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Your Ticket</h1><br>
+        <form action="http://localhost:8080/submit" method="post">
+            <label for="flightName">Flight Name:</label>
+            <select type="text" id="flightName" name="flightName" required>
+                <option value="">Select Airline</option>
+                <option value="American Airlin">American Airline</option>
+                <option value="Delta Airlines">Delta Airlines</option>
+                <option value="United Airlines">United Airlines</option>
+                <option value="Southwest Airlines">Southwest Airlines</option>
+                <option value="JetBlue Airways">JetBlue Airways</option>
+                <option value="Alaska Airlines">Alaska Airlines</option>
+            </select><br>
+
+            <label for="airlineName">Airline Name:</label>
+            <select type="text" id="airlineName" name="airlineName" required>
+                <option value="">Select Flight</option>
+                <option value="AA100">AA100</option>
+                <option value="AA101">AA101</option>
+                <option value="AA102">AA102</option>
+                <option value="DL200">DL200</option>
+                <option value="DL201">DL201</option>
+                <option value="DL202">DL202</option>
+                <option value="UA300">UA300</option>
+                <option value="UA302">UA300</option>
+                <option value="WN400">WN400</option>
+                <option value="WN401">WN401</option>
+                <option value="JB500">JB500</option>
+                <option value="JB501">JB501</option>
+                <option value="AS600">AS600</option>
+                <option value="AS601">AS601</option>
+            </select><br>
+
+            <label for="userName">User Name:</label>
+            <input type="text" id="userName" name="userName" required><br>
+
+            <input type="submit" value="Book Ticket" class="button">
+        </form>
+    </div>
+</body>
+</html>
